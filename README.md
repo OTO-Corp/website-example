@@ -1,54 +1,67 @@
-# React + TypeScript + Vite
+# Application Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Prérequis
 
-Currently, two official plugins are available:
+-   Docker
+-   Docker Compose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Développement
 
-## Expanding the ESLint configuration
+Pour lancer l'application en mode développement :
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Lancer en arrière-plan
+docker-compose -f docker-compose-dev.yaml up -d
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+# Exec docker
+docker exec -it website-example-server-1 bash
+
+npm run dev
+
+# Copier node_modules du container vers le projet local
+docker cp website-example-server-1:/app/node_modules .
+
+
+# Arrêter l'application
+docker-compose -f docker-compose-dev.yaml down
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+L'application sera accessible sur `http://localhost:8080`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Production
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Pour lancer l'application en mode production :
+
+```bash
+# Lancer en arrière-plan
+docker-compose -f docker-compose-prod.yaml up -d
+
+# Exec docker
+docker exec -it website-example-server-1 bash
+
+npm run preview
+
+# Arrêter l'application
+docker-compose -f docker-compose-prod.yaml down
 ```
+
+L'application sera accessible sur `http://localhost:8080`
+
+## Commandes utiles
+
+```bash
+# Voir les logs
+docker logs -f website-example-server-1
+
+# Reconstruire l'image
+docker-compose -f docker-compose-dev.yaml build
+
+# Nettoyer les conteneurs et volumes
+docker-compose -f docker-compose-dev.yaml down -v
+
+```
+
+## Variables d'environnement
+
+-   `NODE_ENV`: définit l'environnement (development/production)
+-   Le port par défaut est 8080
