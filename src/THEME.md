@@ -2,6 +2,111 @@
 
 https://tweakcn.com/editor/theme
 
+## Original Theme
+
+```json
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #f8f8f5;
+  --card-foreground: #222222;
+  --popover: #f8f8f5;
+  --popover-foreground: #222222;
+
+  --primary: #808C7A;
+  --primary-foreground: #ffffff;
+
+  --secondary: #CDBEA7;
+  --secondary-foreground: #1a1a1a;
+
+  --muted: #f0f0ed;
+  --muted-foreground: #555555;
+
+  --accent: #aab398;
+  --accent-foreground: #1a1a1a;
+
+  --destructive: #d9534f;
+  --destructive-foreground: #ffffff;
+
+  --border: #dddddd;
+  --input: #eeeeee;
+  --ring: #808C7A;
+
+  --chart-1: #808C7A;
+  --chart-2: #6f7d6a;
+  --chart-3: #5d6c59;
+  --chart-4: #4c5b49;
+  --chart-5: #3a4a38;
+
+  --sidebar: #f3f1ee;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-primary: #808C7A;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #CDBEA7;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #e0ddd8;
+  --sidebar-ring: #808C7A;
+
+  --font-sans: Montserrat, sans-serif;
+  --font-serif: Merriweather, serif;
+  --font-mono: Source Code Pro, monospace;
+
+  --radius: 12px;
+
+  --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 1px 2px -1px hsl(0 0% 0% / 0.10);
+  --shadow-md: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 2px 4px -1px hsl(0 0% 0% / 0.10);
+  --shadow-lg: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 4px 6px -1px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0 1px 3px 0px hsl(0 0% 0% / 0.10), 0 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+}
+
+.dark {
+  --background: #1c1c1c;
+  --foreground: #f5f5f5;
+  --card: #2a2a2a;
+  --card-foreground: #f0f0f0;
+  --popover: #2a2a2a;
+  --popover-foreground: #f0f0f0;
+
+  --primary: #808C7A;
+  --primary-foreground: #ffffff;
+
+  --secondary: #CDBEA7;
+  --secondary-foreground: #1a1a1a;
+
+  --muted: #333333;
+  --muted-foreground: #aaaaaa;
+
+  --accent: #aab398;
+  --accent-foreground: #1a1a1a;
+
+  --destructive: #d9534f;
+  --destructive-foreground: #ffffff;
+
+  --border: #444444;
+  --input: #3a3a3a;
+  --ring: #808C7A;
+
+  --chart-1: #808C7A;
+  --chart-2: #6f7d6a;
+  --chart-3: #5d6c59;
+  --chart-4: #4c5b49;
+  --chart-5: #3a4a38;
+
+  --sidebar: #222222;
+  --sidebar-foreground: #f0f0f0;
+  --sidebar-primary: #808C7A;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #CDBEA7;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: #444444;
+  --sidebar-ring: #808C7A;
+}
+```
+
 ## Floral Theme
 
 ```json
@@ -155,7 +260,7 @@ https://tweakcn.com/editor/theme
 
 ## Floral theme 2
 
-````json
+```json
 :root {
   --background: oklch(0.99 0.01 106.52);
   --foreground: oklch(0.29 0 0);
@@ -302,11 +407,11 @@ https://tweakcn.com/editor/theme
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 }
-````
+```
 
 ## Floral theme 3
 
-````json
+```json
 :root {
   --background: oklch(0.99 0.01 17.25);
   --foreground: oklch(0.30 0 0);
@@ -453,4 +558,4 @@ https://tweakcn.com/editor/theme
   --shadow-xl: var(--shadow-xl);
   --shadow-2xl: var(--shadow-2xl);
 }
-````
+```
