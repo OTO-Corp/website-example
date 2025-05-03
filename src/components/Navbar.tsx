@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { LanguageSwitcher } from "./buttons/LanguageSwitcher";
 
 export default function Navbar() {
     return (
@@ -14,6 +15,7 @@ export default function Navbar() {
                     <Link to="/about" className="hover:text-gray-300">
                         À propos
                     </Link>
+                    <LanguageSwitcher />
                 </div>
             </div>
         </nav>

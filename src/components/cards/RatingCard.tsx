@@ -38,7 +38,10 @@ export const RatingCard = ({ rating }: Props) => {
                 {rating.comment}
             </div>
             {/* Note en étoiles */}
-            <div>{RenderStars(rating.rating)}</div>
+            <div className="flex items-center gap-2">
+                {RenderStars(rating.rating)}
+                <span className="text-xs text-muted-foreground">({rating.rating}/5)</span>
+            </div>
         </figure>
     );
 };
