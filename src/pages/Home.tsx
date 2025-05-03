@@ -1,9 +1,17 @@
-import { RatingSection } from "@/components/sections/RatingSection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { GallerySection } from "@/components/sections/GallerySection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { WelcomeSection } from "@/components/sections/WelcomeSection";
 
 export default function Home() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-svh w-full">
-            <RatingSection />
+        <div>
+            <WelcomeSection />
+            <AboutSection />
+            <GallerySection />
+            <ServicesSection />
+            <ContactSection />
         </div>
     );
 }

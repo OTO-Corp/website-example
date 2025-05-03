@@ -47,7 +47,7 @@ export const ratings: Rating[] = [
         username: "Pruvost Olivier",
         initials: "PO",
         comment:
-            "Lise et Julie ont réalisé les compositions florales pour notre mariage. Fraîcheur, créativité, écoute et conseils, tout est au rendez-vous. Un plaisir d’échanger et de préparer une journée si importante avec des professionnelles aussi investies.",
+            "Lise et Julie ont réalisé les compositions florales pour notre mariage. Fraîcheur, créativité, écoute et conseils, tout est au rendez-vous. Un plaisir d'échanger et de préparer une journée si importante avec des professionnelles aussi investies.",
         rating: 5,
     },
     {
@@ -61,6 +61,26 @@ export const ratings: Rating[] = [
         username: "Demagny Coralie",
         initials: "DC",
         comment: "Patronne serviable, souriante qui vend de superbe fleurs. Je recommande à 100% !!!",
+        rating: 5,
+    },
+    {
+        username: "Frédéric Travert",
+        initials: "FT",
+        comment:
+            "Vendeuse très agréable au téléphone, bouquet de fleurs monté suivant la demande du client et de très bon goût. Je recommande sans hésiter.",
+        rating: 5,
+    },
+    {
+        username: "Michel Dubois",
+        initials: "MD",
+        comment:
+            "Très grand choix à des prix intéressants. Très bonne accueil et très bien conseillé. Je vous recommande ce commerce artisanale",
+        rating: 5,
+    },
+    {
+        username: "Valérie Letierce",
+        initials: "VL",
+        comment: "Très sympa. Rapport qualité prix. Endroit très agréable",
         rating: 5,
     },
 ];

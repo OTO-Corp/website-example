@@ -3,7 +3,7 @@ import { LanguageSwitcher } from "./buttons/LanguageSwitcher";
 
 export default function Navbar() {
     return (
-        <nav className="bg-gray-800 text-white p-4">
+        <nav className="bg-transparent text-primary p-4 fixed top-0 left-0 right-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
                 <Link to="/" className="text-xl font-bold">
                     Mon App
@@ -11,9 +11,6 @@ export default function Navbar() {
                 <div className="space-x-4">
                     <Link to="/" className="hover:text-gray-300">
                         Accueil
-                    </Link>
-                    <Link to="/about" className="hover:text-gray-300">
-                        À propos
                     </Link>
                     <LanguageSwitcher />
                 </div>

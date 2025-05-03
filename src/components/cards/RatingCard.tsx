@@ -28,7 +28,7 @@ export const RatingCard = ({ rating }: Props) => {
                 </Avatar>
                 {/* Nom d'utilisateur */}
                 <div>
-                    <figcaption className="text-base font-semibold dark:text-white leading-none line-clamp-2">
+                    <figcaption className="text-base font-semibold dark:text-white leading-none">
                         {rating.username}
                     </figcaption>
                 </div>

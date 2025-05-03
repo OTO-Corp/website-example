@@ -4,12 +4,17 @@ import { useRef } from "react";
 import { GetReviewButton } from "../buttons/GetReviewButton";
 import { RatingCard } from "../cards/RatingCard";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import { cn } from "@/lib/utils";
 
-export const RatingSection = () => {
+type Props = {
+    className?: string;
+};
+
+export const RatingSection = ({ className }: Props) => {
     const autoplay = useRef(AutoScroll({ stopOnInteraction: false, startDelay: 0, speed: 1 }));
 
     return (
-        <div className="flex flex-col gap-1 text-primary w-full mx-auto justify-center items-center">
+        <div className={cn("flex flex-col gap-1 text-primary w-full mx-auto justify-center items-center", className)}>
             <Carousel
                 opts={{
                     loop: true,
