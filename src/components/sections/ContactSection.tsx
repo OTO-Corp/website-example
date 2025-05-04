@@ -2,7 +2,7 @@ import { ContactUsCard } from "../cards/ContactUsCard";
 
 export const ContactSection = () => {
     return (
-        <section className="bg-primary">
+        <section id="contact" className="bg-primary">
             <div className="h-dvh flex flex-col items-center justify-center bg-primary container mx-auto">
                 <div className="flex flex-col md:flex-row items-center justify-between flex-1 w-full md:px-8 px-5 py-4 gap-4">
                     <iframe

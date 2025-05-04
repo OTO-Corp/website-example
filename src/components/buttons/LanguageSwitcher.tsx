@@ -38,7 +38,7 @@ export const LanguageSwitcher = () => {
                     <img
                         src={currentLanguage.flag}
                         alt={currentLanguage.name}
-                        className="w-6 h-4 object-cover rounded-sm"
+                        className="w-6 h-6 object-cover rounded-sm"
                     />
                 </Button>
             </DropdownMenuTrigger>
@@ -48,7 +48,7 @@ export const LanguageSwitcher = () => {
                         key={lang.code}
                         onClick={() => changeLanguage(lang.code)}
                         className={cn("flex items-center gap-2", i18n.language === lang.code && "bg-accent")}>
-                        <img src={lang.flag} alt={lang.name} className="w-6 h-4 object-cover rounded-sm" />
+                        <img src={lang.flag} alt={lang.name} className="w-6 h-6 object-cover rounded-sm" />
                         <span>{lang.name}</span>
                     </DropdownMenuItem>
                 ))}

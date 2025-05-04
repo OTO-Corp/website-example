@@ -1,28 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface AppState {
-    value: number;
+    modal: string | null;
 }
 
 const initialState: AppState = {
-    value: 0,
+    modal: null,
 };
 
 const appSlice = createSlice({
     name: "app",
     initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1;
-        },
-        decrement: (state) => {
-            state.value -= 1;
-        },
-        setValue: (state, action: PayloadAction<number>) => {
-            state.value = action.payload;
+        setModal: (state, action: PayloadAction<string | null>) => {
+            state.modal = action.payload;
         },
     },
 });
 
-export const { increment, decrement, setValue } = appSlice.actions;
+export const { setModal } = appSlice.actions;
 export default appSlice.reducer;
