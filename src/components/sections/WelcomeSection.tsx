@@ -1,7 +1,7 @@
 import { AppNavbar } from "@/components/navbars/AppNavbar";
 import { WelcomeNavbar } from "@/components/navbars/WelcomeNavbar";
-import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
+import ExpandableCardDemo from "../expandable-card-demo-standard";
 
 export const WelcomeSection = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -38,11 +38,7 @@ export const WelcomeSection = () => {
 
             {/* Contenu de la section */}
             <div className="flex flex-col items-center justify-center min-h-screen">
-                <h1 className="text-5xl font-extrabold text-white mb-6">Bienvenue sur MonSite</h1>
-                <p className="text-lg text-white/80 mb-8">Votre description ici...</p>
-                <Button size="lg" variant="secondary">
-                    Découvrir
-                </Button>
+                <ExpandableCardDemo />
             </div>
         </section>
     );
