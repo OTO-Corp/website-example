@@ -12,8 +12,8 @@ export const AboutSection = () => {
     const { t } = useTranslation();
 
     const images = [
-        "/boutique.png",
-        "/mur.png",
+        "/images/boutique.png",
+        "/images/mur.png",
     ];
 
     return (
