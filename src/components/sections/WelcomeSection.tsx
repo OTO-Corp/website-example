@@ -1,6 +1,3 @@
-import illu1 from "@/assets/illu1.webp";
-import illu2 from "@/assets/illu2.webp";
-import illu3 from "@/assets/illu3.webp";
 import { AppNavbar } from "@/components/navbars/AppNavbar";
 import { WelcomeNavbar } from "@/components/navbars/WelcomeNavbar";
 import { Button } from "@/components/ui/button";
@@ -9,21 +6,21 @@ import { useEffect, useRef, useState } from "react";
 
 const slides = [
     {
-        image: illu3,
+        image: "/images/illu3.webp",
         title: "Célébrez le plus beau jour de votre vie",
         description: "Avec nos fleurs de mariage !",
         buttonText: "Contactez-nous",
         buttonLink: "#contact",
     },
     {
-        image: illu1,
+        image: "/images/illu1.webp",
         title: "Des bouquets de fleurs originaux",
         description: "Pour fleurir tous vos évènements privés et professionnels !",
         buttonText: "En savoir plus",
         buttonLink: "#about",
     },
     {
-        image: illu2,
+        image: "/images/illu2.webp",
         title: "Des compositions florales spéciales",
         description: "Pour exprimer vos sentiments les plus affectueux !",
         buttonText: "Voir nos réalisations",
@@ -64,7 +61,7 @@ export const WelcomeSection = () => {
     }, []);
 
     return (
-        <section id="welcome" className="relative min-h-screen overflow-hidden">
+        <section id="welcome" className="relative min-h-dvh overflow-hidden">
             {/* Navbar transparente en haut */}
             <WelcomeNavbar scrolled={scrolled} />
 
@@ -72,7 +69,7 @@ export const WelcomeSection = () => {
             <AppNavbar scrolled={showNavbar} />
 
             {/* Carrousel */}
-            <div className="relative w-full h-screen">
+            <div className="relative w-full h-dvh">
                 {slides.map((slide, index) => (
                     <div
                         key={index}
