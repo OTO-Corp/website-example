@@ -1,5 +1,11 @@
 {
     "See all reviews": "Voir tous les avis",
     "Contact us": "Contactez-nous",
-    "Send": "Envoyer"
+    "Send": "Envoyer",
+    "about": {
+        "title": "L'Atelier - Vos moments de vie en fleurs",
+        "paragraph1": "Bienvenue à L'Atelier, votre boutique d'artisanat chaleureuse et authentique. Nichée au cœur de la ville, notre boutique est un véritable écrin où se mêlent créativité et savoir-faire artisanal.",
+        "paragraph2": "Nous vous proposons une sélection unique de compositions florales, de bouquets et de créations originales, soigneusement élaborées pour apporter une touche de nature et d'élégance à votre intérieur. Chaque fleur raconte une histoire, chaque composition est le fruit d'une passion.",
+        "paragraph3": "Notre équipe passionnée est à votre écoute pour vous conseiller et vous guider dans vos choix. Que vous cherchiez un bouquet unique pour votre intérieur ou un cadeau original, vous trouverez chez nous l'inspiration et l'authenticité que vous recherchez."
+    }
 }
