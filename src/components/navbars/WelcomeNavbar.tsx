@@ -11,7 +11,7 @@ type Props = {
 export const WelcomeNavbar = ({ scrolled }: Props) => (
     <nav className="w-full z-30 transition-all absolute top-0 left-0">
         <div
-            className={`container mx-auto flex items-center justify-between px-8 py-4 ${
+            className={`lg:container mx-auto flex items-center justify-between px-8 py-4 ${
                 scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
             } transition-all duration-300`}>
             <span className="text-2xl font-bold text-white cursor-pointer">
@@ -45,7 +45,7 @@ export const WelcomeNavbar = ({ scrolled }: Props) => (
                 <FacebookButton className="text-background md:block hidden" />
                 <InstagramButton className="text-background md:block hidden" />
                 <LanguageSwitcher />
-                <HamburgerMenuButton className="md:hidden text-background" />
+                <HamburgerMenuButton className="text-background" buttonClassName="z-[100] md:hidden" />
             </div>
         </div>
     </nav>

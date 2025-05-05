@@ -13,7 +13,7 @@ export const AppNavbar = ({ scrolled }: Props) => (
         className={`fixed top-0 left-0 w-full z-40 bg-background/90 shadow transition-all duration-300 ${
             scrolled ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
         } backdrop-blur`}>
-        <div className="container mx-auto flex items-center justify-between px-8 py-4">
+        <div className="lg:container mx-auto flex items-center justify-between px-8 py-4">
             <span className="text-2xl font-bold text-primary cursor-pointer">
                 <a href="#welcome" className="transition-colors hover:text-primary/80">
                     MonSite
@@ -38,7 +38,7 @@ export const AppNavbar = ({ scrolled }: Props) => (
                 <FacebookButton className="text-primary/80 md:block hidden" />
                 <InstagramButton className="text-primary/80 md:block hidden" />
                 <LanguageSwitcher />
-                <HamburgerMenuButton className="md:hidden text-primary/80" />
+                <HamburgerMenuButton className="text-primary/80" buttonClassName="md:hidden" />
             </div>
         </div>
     </nav>

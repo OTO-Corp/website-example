@@ -28,13 +28,17 @@ export const ResponsiveNavbarModal = () => {
                 transition-all duration-300
                 ${show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"}
             `}>
-            <Button
-                variant="ghost"
-                size="icon"
-                onClick={handleClose}
-                className="text-2xl text-background hover:text-background/80 transition-colors absolute top-4 right-4">
-                <X className="!w-6 !h-6" />
-            </Button>
+            {/* Fausse navbar pour positionner la croix */}
+            <div className="absolute top-0 left-0 w-full">
+                <div className="lg:container mx-auto flex items-center justify-between px-8 py-4 flex-row-reverse">
+                    <div className="flex items-center gap-1">
+                        <Button variant="ghost" size="icon" onClick={handleClose} className="z-[100]">
+                            <X className="!w-6 !h-6 text-background" />
+                        </Button>
+                    </div>
+                </div>
+            </div>
+
             <div className="flex flex-col items-center gap-6 mt-8">
                 <a href="#about" onClick={handleClose}>
                     <Button variant="link" className="text-background text-xl">
