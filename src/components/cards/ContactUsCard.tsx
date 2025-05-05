@@ -1,4 +1,5 @@
-import { Mail } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Mail, Phone } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
@@ -6,18 +7,26 @@ import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Textarea } from "../ui/textarea";
 
-export const ContactUsCard = () => {
+interface ContactUsCardProps {
+    className?: string;
+}
+
+export const ContactUsCard = ({ className }: ContactUsCardProps) => {
     const { t } = useTranslation();
 
     return (
-        <Card className="w-full max-w-lg mx-auto my-12 shadow-xl/20">
+        <Card className={cn("w-full h-full shadow-xl/20 gap-2", className)}>
             <CardHeader>
                 <CardTitle className="text-3xl font-extrabold text-center text-primary tracking-tight">
                     {t("Contactez-nous")}
                 </CardTitle>
+                <div className="flex items-center gap-1 justify-center">
+                    <Phone className="!w-6 !h-6 text-secondary" />
+                    <span className="text-secondary font-bold">03 21 52 13 50</span>
+                </div>
             </CardHeader>
-            <form>
-                <CardContent className="flex flex-col gap-5 mb-4">
+            <form className="h-full flex flex-col">
+                <CardContent className="flex-1 flex flex-col gap-5">
                     <div className="flex gap-4">
                         <div className="flex-1">
                             <Label className="mb-2" htmlFor="nom">
@@ -48,12 +57,18 @@ export const ContactUsCard = () => {
                         <Label className="mb-2" htmlFor="commentaire">
                             {t("Commentaire")}
                         </Label>
-                        <Textarea className="resize-none" id="commentaire" name="commentaire" rows={3} required />
+                        <Textarea
+                            className="resize-none h-24 placeholder:text-gray-400"
+                            id="commentaire"
+                            name="commentaire"
+                            required
+                            placeholder={t("Parlez-nous de votre projet !")}
+                        />
                     </div>
                 </CardContent>
-                <CardFooter className="flex justify-center">
+                <CardFooter className="flex justify-center mt-2">
                     <Button type="submit" className="w-2/3 flex gap-2 items-center">
-                        <Mail className="w-4 h-4" />
+                        <Mail className="!w-4 !h-4" />
                         {t("Send")}
                     </Button>
                 </CardFooter>
