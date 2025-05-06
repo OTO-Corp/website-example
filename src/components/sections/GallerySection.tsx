@@ -13,8 +13,8 @@ export const GallerySection = () => {
         <div id="gallery" className="min-h-dvh flex flex-col items-center justify-center bg-primary py-16">
             <h1 className="text-4xl font-bold mb-12 text-white">Galerie</h1>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto px-4">
-                {/* Première rangée */}
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-4 max-w-6xl mx-auto px-4">
+                {/* Grande carte en haut à gauche */}
                 <div className="col-span-2 row-span-2 aspect-square">
                     <img
                         src={galleryImages[0]}
@@ -22,6 +22,8 @@ export const GallerySection = () => {
                         className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                     />
                 </div>
+
+                {/* Deux petites cartes en haut à droite */}
                 <div className="aspect-square">
                     <img
                         src={galleryImages[1]}
@@ -37,14 +39,16 @@ export const GallerySection = () => {
                     />
                 </div>
 
-                {/* Deuxième rangée */}
-                <div className="aspect-square">
+                {/* Carte moyenne en bas à gauche */}
+                <div className="col-span-2 aspect-square">
                     <img
                         src={galleryImages[3]}
                         alt="Fleur 4"
                         className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                     />
                 </div>
+
+                {/* Petite carte en bas au milieu */}
                 <div className="aspect-square">
                     <img
                         src={galleryImages[4]}
@@ -52,6 +56,8 @@ export const GallerySection = () => {
                         className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                     />
                 </div>
+
+                {/* Petite carte en bas à droite */}
                 <div className="aspect-square">
                     <img
                         src={galleryImages[5]}
@@ -59,15 +65,8 @@ export const GallerySection = () => {
                         className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
                     />
                 </div>
-                <div className="aspect-square">
-                    <img
-                        src={galleryImages[6]}
-                        alt="Fleur 7"
-                        className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-                    />
-                </div>
 
-                {/* Carte "Voir plus" */}
+                {/* Carte "Voir plus" en bas à droite */}
                 <a
                     href="/gallery"
                     className="col-span-2 aspect-square bg-white/10 rounded-lg flex flex-col items-center justify-center hover:bg-white/20 transition-all duration-300 group">

@@ -1,3 +1,7 @@
+import { Mail, MapPin, Phone } from "lucide-react";
+import { FacebookButton } from "../buttons/FacebookButton";
+import { InstagramButton } from "../buttons/InstagramButton";
+
 export const FooterSection = () => {
     return (
         <footer className="bg-primary text-white py-12 relative">
@@ -7,11 +11,34 @@ export const FooterSection = () => {
                     {/* Colonne 1 - Informations de contact */}
                     <div>
                         <h3 className="text-xl font-semibold mb-4">Contactez-nous</h3>
-                        <div className="space-y-2">
-                            <p>27 Place de la Liberté</p>
-                            <p>62530 Hersin-Coupigny</p>
-                            <p className="mt-4">Téléphone : 03 21 52 13 50</p>
-                            <p>Email : contact@l-atelier.fr</p>
+                        <div className="flex gap-4 mb-6">
+                            <FacebookButton buttonClassName="hover:scale-110 transition-transform duration-300 bg-white/30 p-5 rounded-full" />
+                            <InstagramButton buttonClassName="hover:scale-110 transition-transform duration-300 bg-white/30 p-5 rounded-full" />
+                        </div>
+                        <div className="space-y-4">
+                            <a
+                                href="https://www.google.com/maps/place/27+Place+de+la+Liberté,+62530+Hersin-Coupigny/@50.4507028,2.6483345,17z/data=!3m1!4b1!4m5!3m4!1s0x47dd3cfd6efc240d:0xcb1563072f3c48e9!8m2!3d50.4507028!4d2.6505232"
+                                className="flex items-center gap-3 hover:text-gray-300 transition-colors"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <MapPin className="h-5 w-5" />
+                                <div>
+                                    <p>27 Place de la Liberté</p>
+                                    <p>62530 Hersin-Coupigny</p>
+                                </div>
+                            </a>
+                            <a
+                                href="tel:0321521350"
+                                className="flex items-center gap-3 hover:text-gray-300 transition-colors">
+                                <Phone className="h-5 w-5" />
+                                <span>03 21 52 13 50</span>
+                            </a>
+                            <a
+                                href="mailto:contact@l-atelier.fr"
+                                className="flex items-center gap-3 hover:text-gray-300 transition-colors">
+                                <Mail className="h-5 w-5" />
+                                <span>contact@l-atelier.fr</span>
+                            </a>
                         </div>
                     </div>
 
