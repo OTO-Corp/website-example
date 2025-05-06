@@ -1,9 +1,9 @@
 import { AppNavbar } from "@/components/navbars/AppNavbar";
 import { WelcomeNavbar } from "@/components/navbars/WelcomeNavbar";
 import { Button } from "@/components/ui/button";
+import { Slide } from "@/types/slides";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { SlideContent } from "./welcome/SlideContent";
-import { Slide } from "@/types/slides";
 
 export const WelcomeSection = () => {
     const slides = useMemo<Slide[]>(
@@ -37,6 +37,7 @@ export const WelcomeSection = () => {
     const [showNavbar, setShowNavbar] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const lastScrollY = useRef(0);
+    const timeoutRef = useRef<NodeJS.Timeout>();
 
     const handleClick = (link: string) => {
         console.log(link);
@@ -44,6 +45,20 @@ export const WelcomeSection = () => {
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
         }
+    };
+
+    const startSlideTimer = () => {
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+        timeoutRef.current = setTimeout(() => {
+            setCurrentSlide((prev) => (prev + 1) % slides.length);
+        }, 5000);
+    };
+
+    const handleSlideClick = (index: number) => {
+        setCurrentSlide(index);
+        startSlideTimer();
     };
 
     useEffect(() => {
@@ -65,12 +80,13 @@ export const WelcomeSection = () => {
     }, []);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, [slides]);
+        startSlideTimer();
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, [slides, startSlideTimer]);
 
     return (
         <section id="welcome" className="relative min-h-dvh overflow-hidden">
@@ -106,7 +122,7 @@ export const WelcomeSection = () => {
                             className={`w-3 h-3 rounded-full transition-all duration-300 hover:cursor-pointer hover:bg-white/75 ${
                                 index === currentSlide ? "bg-white scale-125" : "bg-white/50 hover:bg-white/75"
                             }`}
-                            onClick={() => setCurrentSlide(index)}
+                            onClick={() => handleSlideClick(index)}
                         />
                     ))}
                 </div>
