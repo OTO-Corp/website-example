@@ -30,7 +30,7 @@ export const AboutSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10 md:mb-12"
+                    className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12"
                 >
                     {/* Carousel à gauche */}
                     <div className="w-full md:w-1/2 relative group">
@@ -54,7 +54,7 @@ export const AboutSection = () => {
                                             <img 
                                                 src={image} 
                                                 alt="Boutique" 
-                                                className="w-full h-[400px] sm:h-[450px] md:h-[500px] object-cover rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl"
+                                                className="w-full h-[400px] sm:h-[450px] md:h-[450px] object-cover rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl"
                                             />
                                         </motion.div>
                                     </CarouselItem>
@@ -85,13 +85,13 @@ export const AboutSection = () => {
                             transition={{ duration: 0.8, delay: 0.4 }}
                             className="space-y-4 sm:space-y-6"
                         >
-                            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+                            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                                 {t("about.paragraph1")}
                             </p>
-                            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+                            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                                 {t("about.paragraph2")}
                             </p>
-                            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+                            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                                 {t("about.paragraph3")}
                             </p>
                         </motion.div>
