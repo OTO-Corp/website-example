@@ -7,13 +7,19 @@ import {
 } from "@/components/ui/carousel";
 import { TextAnimate } from "../magicui/text-animate";
 import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 
 export const AboutSection = () => {
     const { t } = useTranslation();
 
+    const plugin = useRef(Autoplay({ delay: 2000 }));
+
     const images = [
-        "/images/boutique.png",
-        "/images/mur.png",
+        "/images/about-fleur1.png",
+        "/images/about-boutique.png",
+        "/images/about-fleur2.png",
+        "/images/about-fleur3.png",
+        "/images/about-fleur4.png",
     ];
 
     return (
@@ -26,18 +32,18 @@ export const AboutSection = () => {
                             opts={{
                                 align: "start",
                                 loop: true,
-                                direction: "rtl",
+                                direction: "ltr",
                             }}
-                            plugins={[Autoplay({delay: 2000})]}
+                            plugins={[plugin.current]}
                             className="w-full"
                         >
                             <CarouselContent>
                                 {images.map((image, index) => (
-                                    <CarouselItem key={index}>
+                                    <CarouselItem key={index} className="pl-4 basis-full">
                                         <img 
                                             src={image} 
                                             alt="Boutique" 
-                                            className="w-full h-[300px] md:h-[400px] object-cover rounded-lg"
+                                            className="w-full h-[400px] md:h-[400px] object-cover rounded-lg"
                                         />
                                     </CarouselItem>
                                 ))}
