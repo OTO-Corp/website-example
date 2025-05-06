@@ -37,7 +37,7 @@ export const WelcomeSection = () => {
     const [showNavbar, setShowNavbar] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
     const lastScrollY = useRef(0);
-    const timeoutRef = useRef<NodeJS.Timeout>();
+    const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
     const handleClick = (link: string) => {
         console.log(link);
