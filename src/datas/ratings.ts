@@ -51,7 +51,7 @@ export const ratings: Rating[] = [
         rating: 5,
     },
     {
-        username: "Rossello Lauryanemagron",
+        username: "Rossello Lauryanema",
         initials: "RL",
         comment:
             "Très beau magasin vous trouverez du choix de la qualité du personnel agréable je recommande ce fleuriste les yeux fermés.",

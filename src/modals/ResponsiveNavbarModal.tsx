@@ -24,7 +24,7 @@ export const ResponsiveNavbarModal = () => {
     return (
         <div
             className={`
-                fixed inset-0 z-50 bg-primary flex flex-col items-center justify-center
+                fixed inset-0 z-100 bg-primary flex flex-col items-center justify-center h-dvh
                 transition-all duration-300
                 ${show ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8"}
             `}>

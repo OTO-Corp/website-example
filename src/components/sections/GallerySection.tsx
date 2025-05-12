@@ -1,91 +1,122 @@
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { motion, useInView } from "framer-motion";
+import { Images } from "lucide-react";
+import { useRef } from "react";
+import { Button } from "../ui/button";
+
 export const GallerySection = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true, amount: 0.3 });
+
     const galleryImages = [
         "/images/gallery/fleur1.webp",
         "/images/gallery/fleur2.webp",
         "/images/gallery/fleur3.webp",
         "/images/gallery/fleur4.webp",
-        "/images/gallery/fleur5.webp",
-        "/images/gallery/fleur6.webp",
-        "/images/gallery/fleur7.webp",
     ];
 
     return (
-        <div id="gallery" className="min-h-dvh flex flex-col items-center justify-center bg-primary py-16">
-            <h1 className="text-4xl font-bold mb-12 text-white">Galerie</h1>
+        <section
+            id="gallery"
+            className="relative flex flex-col items-center justify-center bg-primary py-12 min-h-dvh overflow-x-clip">
+            <div className="max-w-7xl w-full mx-auto flex flex-col lg:flex-row items-center justify-between relative">
+                {/* Version Mobile/Tablette */}
+                <div className="lg:hidden w-full max-w-md mx-auto">
+                    {/* Carousel */}
+                    <div className="px-4">
+                        <Carousel className="w-full">
+                            <CarouselContent>
+                                {galleryImages.map((img, i) => (
+                                    <CarouselItem key={img}>
+                                        <img
+                                            src={img}
+                                            alt={`Fleur ${i + 1}`}
+                                            className="aspect-square w-full object-cover shadow-lg rounded-t-xl"
+                                        />
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious className="left-2 bg-white/80 hover:bg-white" />
+                            <CarouselNext className="right-2 bg-white/80 hover:bg-white" />
+                        </Carousel>
+                    </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-4 max-w-6xl mx-auto px-4">
-                {/* Grande carte en haut à gauche */}
-                <div className="col-span-2 row-span-2 aspect-square">
-                    <img
+                    {/* Carte texte */}
+                    <div className="relative z-20 bg-white/90 rounded-b-xl p-6 sm:p-8 shadow-lg mx-4 flex flex-col items-center text-center">
+                        <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2">
+                            <Images className="!w-8 !h-8" />
+                            Galerie
+                        </h2>
+                        <p className="text-gray-700 mb-6 text-base sm:text-lg">
+                            Plongez dans notre univers floral et découvrez des compositions uniques, élégantes et
+                            inspirantes. Laissez-vous séduire par la créativité de nos bouquets !
+                        </p>
+                        <Button
+                            variant="outline"
+                            className="text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+                            EN VOIR PLUS
+                        </Button>
+                    </div>
+                </div>
+
+                {/* Version Desktop : Images superposées façon collage */}
+                <div className="hidden lg:block relative w-2/3 min-h-[600px]">
+                    <motion.img
                         src={galleryImages[0]}
                         alt="Fleur 1"
-                        className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                        initial={{ opacity: 0, x: -60, y: 0 }}
+                        animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                        className="absolute top-0 left-0 w-2/5 h-2/5 object-cover rounded-xl shadow-lg z-10 hover:scale-105 transition-transform duration-300"
                     />
-                </div>
-
-                {/* Deux petites cartes en haut à droite */}
-                <div className="aspect-square">
-                    <img
+                    <motion.img
                         src={galleryImages[1]}
                         alt="Fleur 2"
-                        className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                        initial={{ opacity: 0, x: 60, y: 0 }}
+                        animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+                        transition={{ duration: 0.7, delay: 0.3 }}
+                        className="absolute top-0 right-0 w-1/2 h-2/5 object-cover rounded-xl shadow-md z-20 hover:scale-105 transition-transform duration-300"
                     />
-                </div>
-                <div className="aspect-square">
-                    <img
+                    <motion.img
                         src={galleryImages[2]}
                         alt="Fleur 3"
-                        className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                        initial={{ opacity: 0, x: -40, y: 60 }}
+                        animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+                        transition={{ duration: 0.7, delay: 0.5 }}
+                        className="absolute bottom-0 left-10 w-1/2 h-2/5 object-cover rounded-xl shadow-md z-30 hover:scale-105 transition-transform duration-300"
                     />
-                </div>
-
-                {/* Carte moyenne en bas à gauche */}
-                <div className="col-span-2 aspect-square">
-                    <img
+                    <motion.img
                         src={galleryImages[3]}
                         alt="Fleur 4"
-                        className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                        initial={{ opacity: 0, x: 40, y: 60 }}
+                        animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+                        transition={{ duration: 0.7, delay: 0.7 }}
+                        className="absolute bottom-0 right-0 w-1/3 h-1/3 object-cover rounded-xl shadow-lg z-40 hover:scale-105 transition-transform duration-300"
                     />
                 </div>
 
-                {/* Petite carte en bas au milieu */}
-                <div className="aspect-square">
-                    <img
-                        src={galleryImages[4]}
-                        alt="Fleur 5"
-                        className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-                    />
-                </div>
-
-                {/* Petite carte en bas à droite */}
-                <div className="aspect-square">
-                    <img
-                        src={galleryImages[5]}
-                        alt="Fleur 6"
-                        className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-                    />
-                </div>
-
-                {/* Carte "Voir plus" en bas à droite */}
-                <a
-                    href="/gallery"
-                    className="col-span-2 aspect-square bg-white/10 rounded-lg flex flex-col items-center justify-center hover:bg-white/20 transition-all duration-300 group">
-                    <span className="text-white text-xl font-medium mb-2">Voir plus de photos</span>
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-8 w-8 text-white transform group-hover:translate-x-2 transition-transform duration-300"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                    </svg>
-                </a>
+                {/* Version Desktop : Carte texte */}
+                <motion.div
+                    ref={ref}
+                    initial={{ opacity: 0, x: 60 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.7, delay: 0.8 }}
+                    className="hidden lg:flex relative z-20 bg-white/90 rounded-xl p-6 sm:p-8 shadow-lg lg:mt-0 lg:ml-12 flex-col items-start text-left max-w-md">
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-4 flex items-center gap-2">
+                        <Images className="!w-8 !h-8" />
+                        Galerie
+                    </h2>
+                    <p className="text-gray-700 mb-6 text-base sm:text-lg">
+                        Plongez dans notre univers floral et découvrez des compositions uniques, élégantes et
+                        inspirantes. Laissez-vous séduire par la créativité de nos bouquets !
+                    </p>
+                    <Button
+                        variant="outline"
+                        className="text-base sm:text-lg px-6 sm:px-8 py-2.5 sm:py-3 border border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors duration-300">
+                        EN VOIR PLUS
+                    </Button>
+                </motion.div>
             </div>
-        </div>
+        </section>
     );
 };

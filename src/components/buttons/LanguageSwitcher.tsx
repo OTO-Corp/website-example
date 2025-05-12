@@ -42,7 +42,7 @@ export const LanguageSwitcher = () => {
                     />
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent align="end" className="z-120">
                 {languages.map((lang) => (
                     <DropdownMenuItem
                         key={lang.code}

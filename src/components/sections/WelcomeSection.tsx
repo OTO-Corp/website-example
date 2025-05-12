@@ -101,18 +101,15 @@ export const WelcomeSection = () => {
                 {/* Dégradé vers le bas */}
                 <div className="absolute top-0 left-0 right-0 h-2/5 bg-gradient-to-b from-primary to-transparent z-10" />
 
-                {slides.map((slide, index) => {
-                    console.log(slide);
-                    return (
-                        <div
-                            key={index}
-                            className={`absolute inset-0 transition-opacity duration-1000 ${
-                                index === currentSlide ? "opacity-100" : "opacity-0"
-                            }`}>
-                            <SlideContent slide={slide} currentSlide={currentSlide} onButtonClick={handleClick} />
-                        </div>
-                    );
-                })}
+                {slides.map((slide, index) => (
+                    <div
+                        key={index}
+                        className={`absolute inset-0 transition-opacity duration-1000 ${
+                            index === currentSlide ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                        }`}>
+                        <SlideContent slide={slide} currentSlide={currentSlide} onButtonClick={handleClick} />
+                    </div>
+                ))}
 
                 {/* Indicateurs de slide */}
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">

@@ -44,9 +44,8 @@ export const SlideContent = ({ slide, currentSlide, onButtonClick }: SlideConten
                         <Button
                             size="lg"
                             variant="default"
-                            className="text-lg px-8 py-6 font-bold bg-background hover:bg-background text-foreground hover:scale-105 transition-all duration-300"
-                            onClick={() => onButtonClick(slide.buttonLink)}
-                            key={`button-${currentSlide}`}>
+                            className="rounded-full text-lg px-8 py-6 font-bold bg-background hover:bg-background text-foreground hover:scale-105 transition-all duration-300"
+                            onClick={() => onButtonClick(slide.buttonLink)}>
                             {slide.buttonText}
                         </Button>
                     </div>

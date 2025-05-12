@@ -10,7 +10,7 @@ type Props = {
 
 export const AppNavbar = ({ scrolled }: Props) => (
     <nav
-        className={`fixed top-0 left-0 w-full z-40 bg-background/90 shadow transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-80 bg-background/90 shadow transition-all duration-300 ${
             scrolled ? "translate-y-0 opacity-100" : "-translate-y-10 opacity-0"
         } backdrop-blur`}>
         <div className="lg:container mx-auto flex items-center justify-between px-8 py-4">
